@@ -1,6 +1,7 @@
 ---
 title: "Reproducible Research Assignment1"
 ---
+               
 
 
 ## Loading and preprocessing the data
@@ -62,7 +63,7 @@ ggplot(data = averages, aes(x = interval, y = steps)) + geom_line() + xlab("Time
   ylab("Average number of steps taken")
 ```
 
-![plot of chunk timeseriesplot](figure/timeseriesplot.png) 
+![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3.png) 
 
 2.Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
@@ -113,7 +114,7 @@ total.steps <- tapply(filled.data$steps, filled.data$date, FUN = sum)
 qplot(total.steps, binwidth = 1000, xlab = "Histogram of the total number of steps taken each day", ylab='Frequency')
 ```
 
-![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3.png) 
+![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4.png) 
 
 ```r
 mean(total.steps)
@@ -164,4 +165,4 @@ ggplot(averages, aes(interval, steps)) + geom_line(color='blue', size=.7) + face
 xlab("Time in 5-minute interval") + ylab("Number of steps") + labs(title = "Average number of steps taken per 5-minute interval")
 ```
 
-![plot of chunk timeseries_daytype](figure/timeseries_daytype.png) 
+![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5.png) 

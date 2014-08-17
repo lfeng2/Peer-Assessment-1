@@ -1,6 +1,7 @@
 ---
 title: "Reproducible Research Assignment1"
 ---
+               
 ```{r setoptions, echo=FALSE, results='hide'}
 #opts_chunk$set(echo=TRUE, results='asis')
 ```
@@ -51,7 +52,7 @@ median(total.steps, na.rm = TRUE)
 ## What is the average daily activity pattern?
 1.Make a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all days (y-axis)
 
-```{r timeseriesplot}
+```{r}
 library(ggplot2)
 averages <- aggregate(x = list(steps = data$steps), by = list(interval = data$interval), 
                       FUN = mean, na.rm = TRUE)
@@ -149,7 +150,7 @@ filled.data$day <- sapply(filled.data$date, FUN=weekday.or.weekend)
 ```
 2.Make a panel plot containing a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis). 
 
-```{r timeseries_daytype}
+```{r}
 averages <- aggregate(steps ~ interval + day, data = filled.data, mean)
 ggplot(averages, aes(interval, steps)) + geom_line(color='blue', size=.7) + facet_grid(day ~ .) + 
 xlab("Time in 5-minute interval") + ylab("Number of steps") + labs(title = "Average number of steps taken per 5-minute interval")
